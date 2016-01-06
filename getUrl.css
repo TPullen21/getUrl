@@ -1,8 +1,7 @@
 /* CSS declarations go here */
 body {
   font-family: sans-serif;
-  background-color: #315481;
-  background-image: linear-gradient(to bottom, #315481, #918e82 100%);
+  background-color: #700000;
   background-attachment: fixed;
 
   position: absolute;
@@ -15,18 +14,22 @@ body {
   margin: 0;
 
   font-size: 14px;
+
+  font-family: -apple-system, "Helvetica Neue", "Lucida Grande", sans-serif;
 }
 
 .container {
   max-width: 1000px;
   margin: 0 auto;
   min-height: 100%;
-  background: white;
+  background: #D10000;
+  background-image: radial-gradient(#D10000, #8A0000 100%);
+  /*background: #EE4C33;
+  background-image: radial-gradient(#EE4C33, #B23121 70%);*/
 }
 
 header {
-  background: #d2edf4;
-  background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
+  background: transparent;
   padding: 20px 15px 15px 15px;
   position: relative;
 }
@@ -36,11 +39,13 @@ header {
 }
 
 h1 {
-  font-size: 1.5em;
-  margin: 0;
-  margin-bottom: 10px;
+  font-size: 2em;
+  margin: 10px 0px;
   display: inline-block;
   margin-right: 1em;
+  text-align: center;
+  color: white;
+  width: 100%;
 }
 
 form {
@@ -98,6 +103,8 @@ header button {
 
 .urlText {
   text-align: center;
+  color: white;
+  margin-bottom: 30px;
 }
 
 .urlsSectionContainers {
@@ -108,6 +115,28 @@ header button {
 .formItemContainer {
 	margin-bottom: 10px;
 	padding: 0px 5px !important;
+}
+
+input {
+  background: transparent !important;
+  color: white !important;
+  text-align: center;
+}
+
+::-webkit-input-placeholder {
+	color: white !important;
+}
+
+button {
+	color: #D10000 !important;
+}
+
+a:link, a:visited, a:hover, a:active {
+  color: white;
+}
+
+a:hover {
+	font-weight: bold;
 }
 
 @media (max-width: 600px) {
@@ -123,4 +152,19 @@ header button {
   .new-note input {
     padding-bottom: 5px;
   }
+
+  .container {
+  	background-image: radial-gradient(#D10000, #8A0000 150%);
+  }
+}
+
+@media (min-height: 800px) {
+
+	.urlsBodyContainer {
+		margin: 100px 0px;
+	}
+
+	input {
+		margin-top: 100px;
+	}
 }
