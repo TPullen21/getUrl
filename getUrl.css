@@ -105,6 +105,11 @@ header button {
 	margin-top: 30px;
 }
 
+.formItemContainer {
+	margin-bottom: 10px;
+	padding: 0px 5px !important;
+}
+
 @media (max-width: 600px) {
   li {
     padding: 12px 15px;
@@ -119,13 +124,3 @@ header button {
     padding-bottom: 5px;
   }
 }
-
-/*.notePreview {
-	margin-bottom: 20px;
-	padding-bottom: 20px;
-	border-bottom: #ccc solid 1px;
-}
-
-.notePreview:last-child {
-	border: 0px;
-}*/

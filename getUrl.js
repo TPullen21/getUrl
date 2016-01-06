@@ -3,8 +3,6 @@ Urls = new Mongo.Collection("urls");
 if (Meteor.isServer) {
   // This code only runs on the server
   Meteor.publish("urls", function (key) {
-    //console.log("Finding");
-    ///console.log(key);
     return Urls.find({
       $or: [
         { key: key }
@@ -59,9 +57,6 @@ if (Meteor.isClient) {
       Meteor.call("addUrl", url, key);
 
       return Session.set("keyForUrl", key);
- 
-      // Clear form
-      //event.target.text.value = "";
     },
     "submit #getUrl": function (event) {
       // Prevent default browser form submit
@@ -76,9 +71,6 @@ if (Meteor.isClient) {
 
       console.log(Session.get("keyToGetUrl"));
       Meteor.subscribe("urls", Session.get("keyToGetUrl"));
- 
-      // Clear form
-      //event.target.text.value = "";
     },
     "click .urlPreview": function (event) {
       Session.set("currentUrlText", this.text);
@@ -91,9 +83,19 @@ if (Meteor.isClient) {
     },
     "keyup #keyInput": function (event) {
       console.log("Input changed");
-      /*console.log(this.value);
-      Session.set("keyToGetUrl", this);
-      Meteor.subscribe("urls", Session.get("keyToGetUrl"));*/
+    }
+  });
+
+  Template.registerHelper('validateUrl', function(url) {
+
+    if (url) {
+      var validatedUrl = url;
+
+      if (url.indexOf("http://") < 0 || url.indexOf("https://") < 0) {
+        var validatedUrl = "http://" + url;
+      }
+
+      return new Spacebars.SafeString(validatedUrl)
     }
   });
  

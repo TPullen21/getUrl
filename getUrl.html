@@ -1,5 +1,6 @@
 <head>
   <title>Get URL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 </head>
  
 <body>
@@ -14,10 +15,12 @@
 
 	  		<form class="form" id="getKey">
 				<div class="row">
-					<div class="col-md-9 col-xs-6">
+					<div class="formItemContainer col-md-8 col-xs-12">
 						<input type="text" class="form-control" id="urlInput" name="urlInput" placeholder="URL">
 					</div>
-					<button type="submit" class="btn btn-default col-md-3 col-xs-6">Get Key</button>
+					<div class="formItemContainer col-md-4 col-xs-12">
+						<button type="submit" class="btn btn-primary col-md-12 col-xs-12">Get Key</button>
+					</div>
 				</div>
 			</form>
 			<br>
@@ -29,10 +32,12 @@
 
 			<form class="form" id="getUrl">
 				<div class="row">
-					<div class="col-md-9 col-xs-6">
+					<div class="formItemContainer col-md-8 col-xs-12">
 						<input type="text" class="form-control" id="keyInput" name="keyInput" placeholder="Key">
 					</div>
-					<button type="submit" class="btn btn-default col-md-3 col-xs-6">Get URL</button>
+					<div class="formItemContainer col-md-4 col-xs-12">
+						<button type="submit" class="btn btn-primary col-md-12 col-xs-12">Get URL</button>
+					</div>
 				</div>
 			</form>
 
@@ -52,6 +57,6 @@
  
 <template name="url">
 
-	<h3 class="urlText">{{url}}</h3>
+	<h3 class="urlText"><a href="{{validateUrl url}}" target="__blank">{{validateUrl url}}</a></h3>
 
 </template>
